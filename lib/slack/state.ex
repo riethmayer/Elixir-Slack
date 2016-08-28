@@ -7,6 +7,12 @@ defmodule Slack.State do
   def get_and_update(client, key, function)
   defdelegate get_and_update(client, key, function), to: Map
 
+  def get(client, key, default \\ nil)
+  defdelegate get(client, key, default), to: Map
+
+  def pop(client, key)
+  defdelegate pop(client, key), to: Map
+
   defstruct [
     :socket,
     :client,
